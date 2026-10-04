@@ -1,0 +1,68 @@
+{
+  "id": "/",
+  "name": "KOMA Fast Food Takeaway | Gestão & PDV Pro",
+  "short_name": "KOMA PDV",
+  "description": "Sistema Profissional de Gestão Comercial, Restaurante, Fast-Food, Takeaway, Estoque e PWA Offline para Moçambique",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#ea580c",
+  "background_color": "#0f172a",
+  "categories": ["business", "food", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 128x128 192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Frente de Caixa (PDV)",
+      "url": "/?tab=pdv",
+      "description": "Acesso rápido ao caixa e vendas"
+    },
+    {
+      "name": "Cozinha (KDS)",
+      "url": "/?tab=kds",
+      "description": "Visualizador de pedidos em preparo"
+    },
+    {
+      "name": "Gestão de Estoque",
+      "url": "/?tab=estoque",
+      "description": "Controle e contagem de estoque"
+    }
+  ]
+}

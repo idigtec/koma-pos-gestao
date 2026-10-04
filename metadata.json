@@ -1,0 +1,8 @@
+{
+  "name": "Gestão Comercial & PDV Pro",
+  "description": "Sistema completo de gestão comercial, PDV, controle de estoque, caixa, financeiro e relatórios com suporte a emissão de comprovantes e moeda MT (MZN).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "System operators, managers and administrators",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "manager", "cashier"] },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "passwordHash": { "type": "string" },
+        "lastLogin": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "username", "role", "status"]
+    },
+    "categories": {
+      "title": "Categories",
+      "description": "Product and menu categories",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "icon": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] }
+      },
+      "required": ["name", "status"]
+    },
+    "ingredients": {
+      "title": "Ingredients",
+      "description": "Raw food ingredients, packaging, and raw materials with inventory tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "unit": { "type": "string", "enum": ["un", "kg", "g", "L", "ml", "dose", "cx", "pct", "fardo"] },
+        "currentStock": { "type": "number" },
+        "minStock": { "type": "number" },
+        "costPerUnit": { "type": "number" },
+        "supplierId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "isAvailable": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "unit", "currentStock", "costPerUnit", "isAvailable", "status"]
+    },
+    "products": {
+      "title": "Products",
+      "description": "Commercial items, food menu dishes, combos and beverages",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sku": { "type": "string" },
+        "barcode": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "categoryName": { "type": "string" },
+        "brand": { "type": "string" },
+        "unit": { "type": "string" },
+        "costPrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "currentStock": { "type": "number" },
+        "minStock": { "type": "number" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "image": { "type": "string" },
+        "isFoodItem": { "type": "boolean" },
+        "isFavorite": { "type": "boolean" },
+        "isBestSeller": { "type": "boolean" },
+        "is86": { "type": "boolean" },
+        "averagePrepMinutes": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["sku", "name", "sellingPrice", "currentStock", "status"]
+    },
+    "kitchen_orders": {
+      "title": "Kitchen Orders",
+      "description": "Orders queued for KDS and kitchen preparation with customized modifiers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "saleId": { "type": "string" },
+        "diningOption": { "type": "string", "enum": ["balcao", "mesa", "takeaway", "delivery"] },
+        "tableNumber": { "type": "string" },
+        "customerName": { "type": "string" },
+        "total": { "type": "number" },
+        "status": { "type": "string", "enum": ["novo", "em_preparo", "pronto", "entregue", "cancelado"] },
+        "isPaid": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["orderNumber", "diningOption", "status", "isPaid", "createdAt"]
+    },
+    "suppliers": {
+      "title": "Suppliers",
+      "description": "Food & beverage and merchandise vendors",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "company": { "type": "string" },
+        "nuit": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "company", "nuit", "status"]
+    },
+    "stock_losses": {
+      "title": "Stock Losses",
+      "description": "Waste and loss events (expired, spoiled, break, internal consumption)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "itemType": { "type": "string", "enum": ["product", "ingredient"] },
+        "itemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "reason": { "type": "string" },
+        "cost": { "type": "number" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["itemId", "itemName", "quantity", "cost", "reason"]
+    },
+    "stock_counts": {
+      "title": "Stock Counts",
+      "description": "Physical stock count inventory sheets and divergence adjustments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "performedBy": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "completed"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["date", "performedBy", "status"]
+    },
+    "customers": {
+      "title": "Customers",
+      "description": "Registered clients and final consumers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "documentType": { "type": "string" },
+        "documentNumber": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "totalSpent": { "type": "number" },
+        "totalPurchases": { "type": "number" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "status"]
+    },
+    "sales": {
+      "title": "Sales",
+      "description": "Sales records completed at POS checkout",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "saleNumber": { "type": "string" },
+        "cashSessionId": { "type": "string" },
+        "cashierId": { "type": "string" },
+        "cashierName": { "type": "string" },
+        "customerId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "diningOption": { "type": "string" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "total": { "type": "number" },
+        "status": { "type": "string", "enum": ["completed", "cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["saleNumber", "cashierId", "total", "status", "createdAt"]
+    },
+    "cash_sessions": {
+      "title": "Cash Sessions",
+      "description": "Daily shifts and cash registers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "cashRegisterName": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "initialAmount": { "type": "number" },
+        "totalSales": { "type": "number" },
+        "expectedAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["open", "closed"] },
+        "openedAt": { "type": "string" }
+      },
+      "required": ["cashRegisterName", "userId", "initialAmount", "status", "openedAt"]
+    },
+    "cash_movements": {
+      "title": "Cash Movements",
+      "description": "Sangrias, suprimentos and cash events",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "cashSessionId": { "type": "string" },
+        "type": { "type": "string" },
+        "amount": { "type": "number" },
+        "reason": { "type": "string" },
+        "userId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["cashSessionId", "type", "amount", "reason"]
+    },
+    "stock_movements": {
+      "title": "Stock Movements",
+      "description": "Inventory kardex movements",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productName": { "type": "string" },
+        "type": { "type": "string" },
+        "quantity": { "type": "number" },
+        "previousStock": { "type": "number" },
+        "nextStock": { "type": "number" },
+        "reason": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["productName", "type", "quantity", "reason"]
+    },
+    "financial_transactions": {
+      "title": "Financial Transactions",
+      "description": "Inflow and outflow accounting records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["inflow", "outflow"] },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["type", "category", "description", "amount", "date"]
+    },
+    "audit_logs": {
+      "title": "Audit Logs",
+      "description": "Immutable security and audit track",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "action": { "type": "string" },
+        "entity": { "type": "string" },
+        "description": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["userId", "action", "entity", "description", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "users" },
+      "description": "System user profiles"
+    },
+    "/categories/{categoryId}": {
+      "schema": { "$ref": "categories" },
+      "description": "Product categories"
+    },
+    "/ingredients/{ingredientId}": {
+      "schema": { "$ref": "ingredients" },
+      "description": "Raw food ingredients and inventory tracking"
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "products" },
+      "description": "Products, menu items, combos"
+    },
+    "/kitchen_orders/{kitchenOrderId}": {
+      "schema": { "$ref": "kitchen_orders" },
+      "description": "Kitchen Display System queue"
+    },
+    "/suppliers/{supplierId}": {
+      "schema": { "$ref": "suppliers" },
+      "description": "Product & ingredient suppliers"
+    },
+    "/stock_losses/{lossId}": {
+      "schema": { "$ref": "stock_losses" },
+      "description": "Recorded stock losses and waste"
+    },
+    "/stock_counts/{countId}": {
+      "schema": { "$ref": "stock_counts" },
+      "description": "Physical stock counts and inventory reconciliations"
+    },
+    "/customers/{customerId}": {
+      "schema": { "$ref": "customers" },
+      "description": "Customer accounts"
+    },
+    "/sales/{saleId}": {
+      "schema": { "$ref": "sales" },
+      "description": "Completed sales"
+    },
+    "/cash_sessions/{sessionId}": {
+      "schema": { "$ref": "cash_sessions" },
+      "description": "Cash register sessions"
+    },
+    "/cash_movements/{movementId}": {
+      "schema": { "$ref": "cash_movements" },
+      "description": "Cash register movements"
+    },
+    "/stock_movements/{movementId}": {
+      "schema": { "$ref": "stock_movements" },
+      "description": "Stock movements"
+    },
+    "/financial_transactions/{transactionId}": {
+      "schema": { "$ref": "financial_transactions" },
+      "description": "Financial ledger"
+    },
+    "/audit_logs/{logId}": {
+      "schema": { "$ref": "audit_logs" },
+      "description": "Security audit logs"
+    }
+  }
+}

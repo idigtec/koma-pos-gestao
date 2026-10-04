@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
+  <defs>
+    <linearGradient id="bgGrad192" x1="0" y1="0" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EA580C"/>
+      <stop offset="1" stop-color="#C2410C"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#bgGrad192)"/>
+  <circle cx="96" cy="96" r="64" fill="#FFFFFF" fill-opacity="0.15"/>
+  <!-- POS Cashier / Fast Food Icon -->
+  <path d="M56 128V76C56 69.3726 61.3726 64 68 64H124C130.627 64 136 69.3726 136 76V128C136 134.627 130.627 140 124 140H68C61.3726 140 56 134.627 56 128Z" fill="#FFFFFF"/>
+  <path d="M68 80H124V100H68V80Z" fill="#0F172A"/>
+  <!-- Keypad dots -->
+  <circle cx="78" cy="118" r="4" fill="#EA580C"/>
+  <circle cx="96" cy="118" r="4" fill="#EA580C"/>
+  <circle cx="114" cy="118" r="4" fill="#EA580C"/>
+  <!-- Receipt slot -->
+  <path d="M80 54H112V64H80V54Z" fill="#FFFFFF" fill-opacity="0.8"/>
+</svg>

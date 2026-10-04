@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#EA580C" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KOMA PDV" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script>
+      // Compatibility guard: ensure window.fetch can be assigned without throwing if defined as getter-only
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var boundFetch = originalFetch ? originalFetch.bind(window) : null;
+          var currentFetch = boundFetch;
+
+          var descriptor = {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch || boundFetch;
+            },
+            set: function(val) {
+              if (typeof val === 'function') {
+                currentFetch = val;
+              }
+            }
+          };
+
+          try {
+            Object.defineProperty(window, 'fetch', descriptor);
+          } catch (e1) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', descriptor);
+            } catch (e2) {}
+          }
+        } catch (err) {}
+      })();
+    </script>
+    <title>KOMA Fast Food Takeaway | Gestão Comercial &amp; PDV Pro</title>
+    <meta name="description" content="KOMA Fast Food Takeaway - Fresh • Tasty • Happy. Sistema completo de gestão comercial, PDV, controle de estoque, caixa, financeiro e relatórios." />
+    <meta property="og:title" content="KOMA Fast Food Takeaway | Gestão Comercial &amp; PDV Pro" />
+    <meta property="og:description" content="KOMA Fast Food Takeaway - Fresh • Tasty • Happy. Sistema completo de gestão comercial, PDV, controle de estoque, caixa, financeiro e relatórios." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(
+            function(reg) {
+              console.log('PWA ServiceWorker registered with scope:', reg.scope);
+            },
+            function(err) {
+              console.warn('PWA ServiceWorker registration failed:', err);
+            }
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
+

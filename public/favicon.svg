@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#FF7A00"/>
+      <stop offset="1" stopColor="#E65100"/>
+    </linearGradient>
+    <radialGradient id="donutGlow" cx="26" cy="36" r="28" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#FFA245"/>
+      <stop offset="1" stopColor="#FF6B00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle rounded background with brand orange gradient -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Large Orange / Golden Donut base -->
+  <circle cx="28" cy="36" r="22" fill="#FFA000"/>
+  <circle cx="28" cy="36" r="20" fill="url(#donutGlow)"/>
+  <!-- Donut hole -->
+  <circle cx="28" cy="36" r="8" fill="#FFFFFF"/>
+
+  <!-- Character Biting (Chef Boy) on the top right -->
+  <!-- Chef Hat -->
+  <path d="M44 14C42.5 10.5 44.5 7 48 7C51 7 53 9 54 12C55.5 11.5 57.5 13 57 15.5C56.5 17 54.5 18 53 18L44.5 18C43.5 18 43.5 15.5 44 14Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8"/>
+  <rect x="44" y="16" width="9.5" height="2.8" rx="1.2" fill="#FED7AA" stroke="#1C1917" stroke-width="1.2"/>
+
+  <!-- Boy Head & Face -->
+  <circle cx="46" cy="27" r="12" fill="#FFEDD5" stroke="#1C1917" stroke-width="1.8"/>
+  
+  <!-- Hair -->
+  <path d="M38 23C38 18 43 15 48 15C53 15 56 18 57 22C54 22 51 20 48 20C45 20 42 22 40 24C39 25 38 25 38 23Z" fill="#78350F"/>
+  <path d="M44 15C43 13 40 13 39 15" stroke="#78350F" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Happy closed eye smile -->
+  <path d="M46 25C47.2 23.8 49.5 23.8 50.7 25" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round"/>
+  
+  <!-- Cheerful blush -->
+  <circle cx="51" cy="29" r="2.2" fill="#F87171" opacity="0.6"/>
+
+  <!-- Mouth biting into donut -->
+  <path d="M40 29C37 29 33 32 35 37C38 41 43 38 43 34C43 31 41 29 40 29Z" fill="#991B1B" stroke="#1C1917" stroke-width="1.8"/>
+  <!-- Teeth -->
+  <rect x="37" y="30" width="4" height="2" rx="1" fill="#FFFFFF"/>
+
+  <!-- Flying crumbs -->
+  <circle cx="34" cy="23" r="1.4" fill="#FFFFFF"/>
+  <circle cx="38" cy="20" r="1.1" fill="#FFD54F"/>
+  <circle cx="48" cy="42" r="1.2" fill="#FFEDD5"/>
+</svg>

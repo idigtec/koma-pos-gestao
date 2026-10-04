@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad512" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EA580C"/>
+      <stop offset="1" stop-color="#9A3412"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad512)"/>
+  <circle cx="256" cy="256" r="170" fill="#FFFFFF" fill-opacity="0.12"/>
+  <!-- Terminal base -->
+  <rect x="140" y="160" width="232" height="200" rx="28" fill="#FFFFFF"/>
+  <rect x="168" y="196" width="176" height="64" rx="8" fill="#0F172A"/>
+  <!-- Buttons -->
+  <circle cx="196" cy="296" r="12" fill="#EA580C"/>
+  <circle cx="256" cy="296" r="12" fill="#EA580C"/>
+  <circle cx="316" cy="296" r="12" fill="#EA580C"/>
+  <circle cx="196" cy="332" r="12" fill="#EA580C"/>
+  <circle cx="256" cy="332" r="12" fill="#16A34A"/>
+  <circle cx="316" cy="332" r="12" fill="#DC2626"/>
+  <!-- Paper receipt top -->
+  <path d="M200 120H312V160H200V120Z" fill="#F8FAFC"/>
+  <path d="M220 136H292" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+</svg>

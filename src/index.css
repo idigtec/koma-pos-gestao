@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ea580c;
+  --color-primary-hover: #c2410c;
+  --color-primary-light: #ffedd5;
+  --color-surface: #ffffff;
+  --color-surface-dark: #0f172a;
+  --color-background: #f8fafc;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --radius-card: 1rem;
+  --spacing-touch: 3rem;
+}
+
+/* Base custom root tokens for dynamic theming (Light/Dark/Touch/Compact) */
+:root {
+  --primary-color: #ea580c;
+  --primary-rgb: 234, 88, 12;
+  --touch-target-min: 44px;
+  --font-touch-size: 1rem;
+}
+
+/* Touch Mode Optimizations */
+.touch-mode button,
+.touch-mode input,
+.touch-mode select,
+.touch-mode a {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.touch-mode .product-card {
+  padding: 1rem;
+  min-height: 180px;
+}
+
+/* Compact Mode for Mouse & Keyboard */
+.compact-mode button,
+.compact-mode input,
+.compact-mode select {
+  min-height: 36px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+.compact-mode .product-card {
+  padding: 0.625rem;
+  min-height: 140px;
+}
+
+/* Prevent unwanted callouts and selections on touchscreen hardware */
+.select-none {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
